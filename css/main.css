@@ -1,0 +1,56 @@
+body {
+  background-color: black;
+  font-family: arial;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-image: url(../assets/background/stars.png), url(../assets/background/bg.png);
+  background-position: center -170px;
+  background-repeat: repeat-y;
+}
+
+.header-1 {
+  color: white;
+  font-size: 31;
+  margin-bottom: 5px;
+}
+
+.paragraph-1 {
+  color: grey;
+  font-size: 18;
+  margin-top: 5px;
+}
+
+.commander {
+  margin: 150px auto;
+}
+
+.character img {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.orbit {
+  position: fixed;
+  top: -50%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  border: 2px solid grey;
+  border-radius: 50%;
+}
+
+.planet {
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 69%;
+  left: 48%;
+  background-color: white;
+  border-radius: 50%;
+}
