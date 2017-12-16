@@ -82,7 +82,7 @@ array = [{
     parent: 2
   },
   {
-    id: 13,
+    id: 31,
     name: "RN-46",
     post: "Soldier",
     image: "stromtrooper2.png",
