@@ -24,7 +24,7 @@ function renderSubordinates(n) {
 
 $(document).ready(renderHome());
 
-$(".character").click(function() {
+$(".content").on("click", ".character", function() {
   renderCharacter($(this).prop("id"))
 });
 
