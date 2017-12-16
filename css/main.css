@@ -1,17 +1,37 @@
 body {
   background-color: black;
   font-family: arial;
-  text-align: center;
+  margin: 0;
 }
 
 .container {
+  padding-top: 50px;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   max-width: 1400px;
   margin: 0 auto;
   background-image: url(../assets/background/stars.png), url(../assets/background/bg.png);
   background-position: center -170px;
   background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../assets/svg/circle.svg) no-repeat;
+  background-position: center -1000px;
+  background-size: auto 300%;
+  width: 100%;
+  height: 500px;
+}
+
+.logo {
+  background: url(../assets/svg/sw_logo.svg) no-repeat;
+  width: 115px;
+  height: 50px;
+  margin: 0 auto;
 }
 
 .header-1 {
@@ -26,31 +46,17 @@ body {
   margin-top: 5px;
 }
 
+.character {
+  width: 300px;
+  margin: 10px auto;
+}
+
 .commander {
-  margin: 150px auto;
+  margin: 50px auto 150px;
+  text-align: center;
 }
 
 .character img {
   border: 2px solid white;
-  border-radius: 50%;
-}
-
-.orbit {
-  position: fixed;
-  top: -50%;
-  left: -10%;
-  width: 120%;
-  height: 120%;
-  border: 2px solid grey;
-  border-radius: 50%;
-}
-
-.planet {
-  width: 20px;
-  height: 20px;
-  position: fixed;
-  top: 69%;
-  left: 48%;
-  background-color: white;
   border-radius: 50%;
 }
