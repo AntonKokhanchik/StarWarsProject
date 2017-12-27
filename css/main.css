@@ -5,7 +5,6 @@ body {
 }
 
 .container {
-  padding-top: 50px;
   width: 100%;
   min-height: 100%;
   max-width: 1400px;
@@ -28,8 +27,9 @@ body {
 }
 
 .logo {
-  background: url(../assets/svg/Star_Wars.svg) no-repeat;
+  background: url(../assets/svg/Star_Wars.svg) no-repeat center 50px;
   width: 115px;
+  padding-top: 50px;
   height: 50px;
   margin: 0 auto;
 }
@@ -47,18 +47,57 @@ body {
 }
 
 .character {
-  width: 300px;
+  width: 350px;
   margin: 10px auto;
 }
 
+.character:nth-child(2n+1) {
+  float: left;
+  margin-left: 15%;
+}
+
+.character:nth-child(2n) {
+  float: right;
+  margin-right: 15%;
+}
+
 .commander {
-  margin: 50px auto 150px;
+  margin: 50px auto 0;
   text-align: center;
+}
+
+.commander img {
+  border: 2px solid white;
+  border-radius: 50%;
 }
 
 .character img {
   border: 2px solid white;
   border-radius: 50%;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+.character-name {
+  /* padding-top: 12px; */
+}
+
+.character::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.content {
+  margin-top: 100px;
+  min-height: 100px;
+}
+
+.content::after {
+  display: block;
+  content: "";
+  clear: both;
 }
 
 #button-back {
