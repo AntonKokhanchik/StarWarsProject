@@ -15,6 +15,34 @@ function renderHome() {
   renderSubordinates(undefined);
 }
 
+function renderCharacter(id) {
+  // показываем кнопки
+  $("#button-back, #button-next, #button-prev").show();
+
+  // ищем персонажа
+  var character;
+  array.forEach(function(e) {
+    if (e.id == id)
+      character = e;
+  });
+
+  // заполняем массив персонажей одного уровня
+  line = [];
+  array.forEach(function(e) {
+    if (e.parent == character.parent)
+      line.push(e.id);
+  });
+
+  // рендерим командира
+  $(".commander .commander-image").prop("src", "assets/avatars/" + character.image);
+  $(".commander .commander-name").text(character.name);
+  $(".commander .commander-post").text(character.post);
+  commander_id = character.id;
+
+  // рендерим подчинённых
+  renderSubordinates(id);
+}
+
 function renderSubordinates(n) {
   $(".content").html("");
   array.forEach(function(e) {
@@ -69,31 +97,3 @@ $("#button-prev").click(function() {
 $(".logo").click(function() {
   renderHome();
 });
-
-function renderCharacter(id) {
-  // показываем кнопки
-  $("#button-back, #button-next, #button-prev").show();
-
-  // ищем персонажа
-  var character;
-  array.forEach(function(e) {
-    if (e.id == id)
-      character = e;
-  });
-
-  // заполняем массив персонажей одного уровня
-  line = [];
-  array.forEach(function(e) {
-    if (e.parent == character.parent)
-      line.push(e.id);
-  });
-
-  // рендерим командира
-  $(".commander .commander-image").prop("src", "assets/avatars/" + character.image);
-  $(".commander .commander-name").text(character.name);
-  $(".commander .commander-post").text(character.post);
-  commander_id = character.id;
-
-  // рендерим подчинённых
-  renderSubordinates(id);
-}
