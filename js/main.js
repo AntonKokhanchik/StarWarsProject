@@ -66,6 +66,10 @@ $("#button-prev").click(function() {
     }
 });
 
+$(".logo").click(function() {
+  renderHome();
+});
+
 function renderCharacter(id) {
   // показываем кнопки
   $("#button-back, #button-next, #button-prev").show();
