@@ -4,6 +4,17 @@ body {
   margin: 0;
 }
 
+.header-1, .header-2 {
+  color: white;
+  font-size: 31;
+  margin-bottom: 5px;
+}
+
+.paragraph-1, .paragraph-2 {
+  color: grey;
+  margin-top: 5px;
+}
+
 .container {
   width: 100%;
   min-height: 100%;
@@ -12,7 +23,17 @@ body {
   background-image: url(../assets/background/stars.png), url(../assets/background/bg.png);
   background-position: center -170px;
   background-repeat: repeat-y;
-  background-size: cover;
+  background-size: 100% auto;
+}
+
+.logo {
+  background: url(../assets/svg/Star_Wars.svg) no-repeat;
+  position: relative;
+  width: 115px;
+  top: 50px;
+  height: 50px;
+  margin: 0 auto;
+  z-index: 2;
 }
 
 .orbit {
@@ -26,108 +47,11 @@ body {
   height: 500px;
 }
 
-.logo {
-  background: url(../assets/svg/Star_Wars.svg) no-repeat;
-  position: relative;
-  width: 115px;
-  top: 50px;
-  height: 50px;
-  margin: 0 auto;
-  z-index: 2;
-}
-
-.header-1 {
-  color: white;
-  font-size: 31;
-  margin-bottom: 5px;
-}
-
-.paragraph-1 {
-  color: grey;
-  font-size: 18;
-  margin-top: 5px;
-}
-
-.character {
-  width: 350px;
-  margin: 10px auto;
-}
-
-.character:nth-child(2n+1) {
-  float: left;
-  margin-left: 15%;
-}
-
-.character:nth-child(2n) {
-  float: right;
-  margin-right: 15%;
-}
-
-.commander {
-  margin: 100px auto 0;
-  text-align: center;
-}
-
-.commander img {
-  border: 2px solid white;
-  border-radius: 50%;
-}
-
-.character .character-image {
-  border: 2px solid white;
-  border-radius: 50%;
-  width: 100px;
-  float: left;
-  margin-right: 10px;
-}
-
-.character img {
-  width: 100px;
-  border-radius: 50%;
-}
-
-.character-name {
-  /* padding-top: 12px; */
-}
-
-.character::after {
-  display: block;
-  content: "";
-  clear: both;
-}
-
-.content {
-  margin-top: 100px;
-  min-height: 100px;
-}
-
-.content::after {
-  display: block;
-  content: "";
-  clear: both;
-}
-
 #button-back {
   position: absolute;
   background-color: rgba(0, 0, 0, 0);
   top: 70px;
   left: 15%;
-}
-
-.clickable:hover {
-  cursor: pointer;
-}
-
-.character:hover img {
-  filter: brightness(50%);
-}
-
-.character:hover .character-name {
-  color: red;
-}
-
-.character:hover .character-post {
-  color: white;
 }
 
 #button-next {
@@ -149,10 +73,129 @@ body {
   background: url(../assets/svg/arrow.svg);
 }
 
-#button-next:hover, #button-prev:hover {
-  filter: brightness(50%);
+.commander {
+  margin: 100px auto 0;
+  text-align: center;
 }
 
-#button-back:hover {
-  color: white;
+.commander .commander-image {
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.character {
+  width: 350px;
+  margin: 50px auto 0;
+}
+
+.character .character-image {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 100px;
+  float: left;
+  margin-right: 30px;
+}
+
+.character .character-image img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.character::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.content {
+  padding: 50px 0;
+  min-height: 100px;
+}
+
+.content::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* телефоны */
+
+@media only screen and (max-device-width: 425px) {
+  .header-1 {
+    font-size: 25;
+  }
+  .paragraph-1 {
+    font-size: 15;
+  }
+  .header-2 {
+    font-size: 18;
+  }
+  .paragraph-2 {
+    font-size: 11;
+  }
+  .container {
+    background: black;
+  }
+  #button-back.paragraph-1 {
+    color: white;
+  }
+}
+
+/* планшеты */
+
+@media only screen and (max-device-width: 1024px) {
+  .header-1 {
+    font-size: 31;
+  }
+  .paragraph-1 {
+    font-size: 18;
+  }
+  .header-2 {
+    font-size: 25;
+  }
+  .paragraph-2 {
+    font-size: 15;
+  }
+}
+
+/* пк */
+
+@media only screen and (min-device-width: 1024px) {
+  .header-1, .header-2 {
+    font-size: 31;
+  }
+  .paragraph-1, .paragraph-2 {
+    font-size: 18;
+  }
+  .clickable:hover {
+    cursor: pointer;
+  }
+  #button-next:hover, #button-prev:hover {
+    filter: brightness(50%);
+  }
+  #button-back:hover {
+    color: white;
+  }
+  .character:hover img {
+    filter: brightness(50%);
+  }
+  .character:hover .character-name {
+    color: red;
+  }
+  .character:hover .character-post {
+    color: white;
+  }
+}
+
+/* чтобы работали ховеры, оставался шрифт, но персонажи стояли в одну колонку в уменьшенном окне браузера */
+
+@media only screen and (min-width: 1024px) {
+  .character:nth-child(2n+1) {
+    float: left;
+    margin-left: 15%;
+  }
+  .character:nth-child(2n) {
+    float: right;
+    margin-right: 15%;
+  }
 }

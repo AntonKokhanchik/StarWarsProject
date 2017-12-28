@@ -50,8 +50,8 @@ function renderSubordinates(n) {
       $(".content").append(
         "<div class = 'clickable character' id='" + e.id + "'>" +
         "<div class = 'character-image'><img src = 'assets/avatars/" + e.image + "' /></div>" +
-        "<h1 class = 'character-name header-1'> " + e.name + " </h1>" +
-        "<p class = 'character-post paragraph-1'> " + e.post + " </p>" +
+        "<h1 class = 'character-name header-2'> " + e.name + " </h1>" +
+        "<p class = 'character-post paragraph-2'> " + e.post + " </p>" +
         "</div>");
   });
 }
