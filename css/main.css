@@ -145,12 +145,30 @@ body {
   }
   .header-2 {
     font-size: 18;
+    margin-top: 5px;
   }
   .paragraph-2 {
     font-size: 11;
   }
   .container {
     background: black;
+  }
+  .orbit {
+    background-position: center -2100px;
+  }
+  .commander .commander-image {
+    width: 120px;
+  }
+  .character {
+    width: 270px;
+    margin-top: 20px;
+  }
+  .character .character-image {
+    width: 70px;
+    margin-right: 10px;
+  }
+  .character .character-image img {
+    width: 70px;
   }
   #button-back.paragraph-1 {
     color: white;
