@@ -103,6 +103,20 @@ body {
   border-radius: 50%;
 }
 
+.character .sticker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 20px;
+  height: 20px;
+  padding: 5px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
+}
+
 .character::after {
   display: block;
   content: "";

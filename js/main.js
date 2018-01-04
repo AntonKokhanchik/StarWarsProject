@@ -46,14 +46,30 @@ function renderCharacter(id) {
 function renderSubordinates(n) {
   $(".content").html("");
   array.forEach(function(e) {
-    if (e.parent == n)
-      $(".content").append(
+    if (e.parent == n) {
+      var characterText =
         "<div class = 'clickable character' id='" + e.id + "'>" +
-        "<div class = 'character-image'><img src = 'assets/avatars/" + e.image + "' /></div>" +
-        "<h1 class = 'character-name header-2'> " + e.name + " </h1>" +
+        "<div class = 'character-image'>" +
+        "<img src = 'assets/avatars/" + e.image + "' />";
+      if ((s = numberSubordinates(e.id)) != 0)
+        characterText += "<div class = 'sticker'>" + s + "</div>";
+      characterText +=
+        "</div>" +
+        "<h2 class = 'character-name header-2'> " + e.name + " </h1>" +
         "<p class = 'character-post paragraph-2'> " + e.post + " </p>" +
-        "</div>");
+        "</div>";
+      $(".content").append(characterText);
+    }
   });
+}
+
+function numberSubordinates(id) {
+  var number = 0;
+  array.forEach(function(e) {
+    if (e.parent == id)
+      number += numberSubordinates(e.id) + 1;
+  });
+  return number;
 }
 
 $(document).ready(renderHome());
