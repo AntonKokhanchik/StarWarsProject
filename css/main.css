@@ -84,6 +84,8 @@ body {
 }
 
 .character {
+  position: relative;
+  overflow: hidden;
   width: 350px;
   margin: 50px auto 0;
 }
