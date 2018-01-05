@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&subset=cyrillic');
 body {
   background-color: black;
-  font-family: arial;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
 }
 
