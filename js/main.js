@@ -51,8 +51,10 @@ function renderSubordinates(n) {
         "<div class = 'clickable character' id='" + e.id + "'>" +
         "<div class = 'character-image'>" +
         "<img src = 'assets/avatars/" + e.image + "' />";
+
       if ((s = numberSubordinates(e.id)) != 0)
         characterText += "<div class = 'sticker'>" + s + "</div>";
+
       characterText +=
         "</div>" +
         "<h2 class = 'character-name header-2'> " + e.name + " </h1>" +
@@ -75,7 +77,7 @@ function numberSubordinates(id) {
 $(document).ready(renderHome());
 
 $(".content").on("click", ".character", function() {
-  renderCharacter($(this).prop("id"))
+  renderCharacter($(this).prop("id"));
 });
 
 $("#button-back").click(function() {
