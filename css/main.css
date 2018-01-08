@@ -171,6 +171,11 @@ body {
   .character .character-image img {
     width: 70px;
   }
+  #button-prev, #button-next {
+    display: none;
+    /* будет появляться из-за скрипта, потому вдобавок */
+    width: 0;
+  }
   #button-back.paragraph-1 {
     color: white;
   }
