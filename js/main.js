@@ -74,6 +74,12 @@ function numberSubordinates(id) {
   return number;
 }
 
+function abs(n) {
+  if (n < 0)
+    return -n;
+  return n;
+}
+
 $(document).ready(renderHome());
 
 $(".content").on("click", ".character", function() {
@@ -115,3 +121,55 @@ $("#button-prev").click(function() {
 $(".logo").click(function() {
   renderHome();
 });
+
+
+// свайпы
+var x0, y0;
+var direction = 0;
+
+$('body').get(0).ontouchstart = function(e) {
+  // запоминаем начальную позицию
+  x0 = e.touches[0].clientX;
+  y0 = e.touches[0].clientY;
+};
+
+$('body').get(0).ontouchmove = function(e) {
+  // только один палец
+  if (e.touches.length == 1) {
+    var deltaX = x0 - e.touches[0].clientX;
+    var deltaY = y0 - e.touches[0].clientY;
+    // во избежание ложных перелистываний при движении вверх-вниз
+    if (abs(deltaX) > abs(deltaY + 20)) {
+      // вперёд
+      if (deltaX > 20)
+        direction = 1;
+      // назад
+      if (deltaX < -20)
+        direction = -1;
+    }
+  }
+};
+
+$('body').get(0).ontouchend = function(e) {
+  // сработает только при отпускании пальца
+  if (direction > 0)
+    for (var i = 0; i < line.length; i++)
+      if (line[i] == commander_id) {
+        if (i + 1 == line.length)
+          renderCharacter(line[0]);
+        else
+          renderCharacter(line[i + 1]);
+        break;
+      }
+  if (direction < 0)
+    for (var i = 0; i < line.length; i++)
+      if (line[i] == commander_id) {
+        if (i == 0)
+          renderCharacter(line[line.length - 1]);
+        else
+          renderCharacter(line[i - 1]);
+        break;
+      }
+  // на всякий случай, обнуляем
+  direction = 0;
+};
